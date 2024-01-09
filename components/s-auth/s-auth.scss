@@ -1,6 +1,6 @@
 /* stylelint-disable no-descending-specificity */
 
-.s-login {
+.s-auth {
   width: 100%;
   color: var(--color-second);
   &__title{
@@ -15,6 +15,7 @@
     }
   }
   &__formbox{
+    text-align: center;
     max-width: torem(420);
     margin: torem(24) auto 0;
   }
@@ -26,7 +27,8 @@
     border-radius: var(--border-radius-x1);
     &-input{
       border: none;
-      border-radius: var(--border-radius-x1);
+      border-bottom: torem(1) solid var(--color-grey);
+      // border-radius: var(--border-radius-x1);
       background: transparent;
       width: 100%;
       min-height: torem(40);
@@ -51,11 +53,48 @@
       background: var(--color-orange);
       border-radius: var(--border-radius-x1);
     }
-  }
-  &__information{
-    margin-top: torem(30);
-    span{
+    &-error{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: torem(46);
+      font-size: torem(14);
       font-weight: 600;
+      color: var(--color-main);
+      background: var(--color-error);
+      border-radius: var(--border-radius-x1);
+      margin: torem(8) auto 0;
+      user-select: none;
+    }
+  }
+  &__text{
+    display: block;
+    margin: 1rem auto;
+    font-size: torem(16);
+  }
+  &__button{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: torem(40);
+    border: none;
+    outline: none;
+    font-size: torem(14);
+    font-weight: 600;
+    color: var(--color-main);
+    background: var(--color-grey);
+    border-radius: var(--border-radius-x1);
+  }
+  &__help{
+    display: block;
+    margin: 2rem auto 0;
+    font-size: torem(14);
+    &-bold{
+      font-weight: 800;
     }
   }
 }

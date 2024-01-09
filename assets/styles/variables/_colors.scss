@@ -4,15 +4,17 @@
   --color-second: #272727;
   --color-white: #fff;
   --color-black: #272727;
-  --color-grey: #eee;
+  --color-grey: #c0c0c0;
   --color-orange: #ffb700;
+  --color-error: #ff5100;
   .dark-themes {
     --color-main: #272727;
     --color-second: #fff;
     --color-white: #fff;
     --color-black: #272727;
-    --color-grey: #eee;
+    --color-grey: #c0c0c0;
     --color-orange: #ffb700;
+    --color-error: #ff5100;
     .s-header__login-image {
       filter: invert(1);
     }

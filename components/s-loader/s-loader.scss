@@ -13,8 +13,8 @@
 
 .spinner {
   position: relative;
-  width: rem(60);
-  height: rem(60);
+  width: torem(60);
+  height: torem(60);
   text-align: center;
   animation: sk-rotate 2s infinite linear;
 }

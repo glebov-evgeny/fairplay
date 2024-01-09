@@ -1,6 +1,6 @@
 <template>
   <section class="s-login">
-    <div class="s-login__container l-wide">
+    <div class="s-login__container">
       <h1 class="s-login__title">Вход</h1>
       <div class="s-login__formbox">
         <form class="s-login__form" :submit-disabled="!validFlag" @submit.prevent="sendForm">
@@ -8,7 +8,6 @@
           <input v-model="fieldsData.password" class="s-login__form-input" type="password" placeholder="Пароль" />
           <button type="submit" class="s-login__form-button">Вход</button>
         </form>
-        <p class="s-login__information">Для проверки авторизации использовать логин и пароль: <span>12345</span></p>
       </div>
     </div>
   </section>

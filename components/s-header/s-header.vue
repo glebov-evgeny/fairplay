@@ -2,7 +2,9 @@
 <template>
   <header class="s-header">
     <div class="s-header__container l-wide">
-      <nuxt-link to="/" class="s-header__logo">Logo</nuxt-link>
+      <nuxt-link to="/" class="s-header__logo">
+        <span>Глебов <br />Евгений</span>
+      </nuxt-link>
       <div class="s-header__logic">
         <button class="s-header__theme" type="button" @click="changeThemes">
           <svg
@@ -25,7 +27,7 @@
             </defs>
           </svg>
         </button>
-        <nuxt-link to="/admin" :class="['s-header__link', { 's-header__link-active': currentUser.uid }]">
+        <nuxt-link to="/lk" :class="['s-header__link', { 's-header__link-active': currentUser.uid }]">
           <img class="s-header__login-image" src="/images/icons/lk.png" />
         </nuxt-link>
         <button v-if="!currentUser.uid" class="s-header__login" @click="checkLogin">

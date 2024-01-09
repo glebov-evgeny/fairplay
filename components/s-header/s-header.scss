@@ -1,17 +1,16 @@
 .s-header {
   background: var(--color-main);
-  border-bottom: rem(1) solid var(--color-grey);
-  padding: var(--a-padding-x1) 0;
+  border-bottom: torem(1) solid var(--color-grey);
+  padding: var(--a-padding-x2) 0;
   &__container{
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
   &__logo{
-    font-size: rem(20);
-    font-weight: 900;
-    text-transform: uppercase;
-    margin-right: rem(15);
+    font-size: torem(18);
+    font-weight: 800;
+    margin-right: torem(15);
     color: var(--color-second);
   }
   &__logic{
@@ -19,8 +18,8 @@
     align-items: center;
   }
   &__theme{
-    width: rem(25);
-    height: rem(25);
+    width: torem(25);
+    height: torem(25);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -28,7 +27,7 @@
     border: none;
     outline: none;
     background: transparent;
-    margin-right: rem(8);
+    margin-right: torem(8);
     &:hover{
       svg{
         transform: rotate(90deg);
@@ -43,15 +42,15 @@
   }
   &__login {
     cursor: pointer;
-    width: rem(28);
-    height: rem(28);
+    width: torem(28);
+    height: torem(28);
     border: none;
     outline: none;
     background: transparent;
   }
   &__link {
-    width: rem(26);
-    height: rem(26);
+    width: torem(26);
+    height: torem(26);
     border: none;
     outline: none;
     background: transparent;
@@ -60,7 +59,7 @@
     cursor: default;
     opacity: .1;
     transition: .3s;
-    margin-right: rem(4);
+    margin-right: torem(4);
     &-active{
       cursor: pointer;
       opacity: 1;

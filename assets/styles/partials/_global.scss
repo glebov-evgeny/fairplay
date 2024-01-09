@@ -74,11 +74,11 @@ a {
   margin: 0 auto;
 
   @media screen and (min-width: 768px) {
-    margin: rem(24) auto;
+    margin: 1.5rem auto;
   }
 
   @media screen and (min-width: 1140px) {
-    margin: rem(40) auto;
+    margin: 3rem auto;
   }
 }
 
