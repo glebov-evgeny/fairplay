@@ -1,0 +1,21 @@
+/* stylelint-disable */
+:root {
+  --color-main: #fff;
+  --color-second: #272727;
+  --color-white: #fff;
+  --color-black: #272727;
+  --color-grey: #eee;
+  --color-orange: #ffb700;
+  .dark-themes {
+    --color-main: #272727;
+    --color-second: #fff;
+    --color-white: #fff;
+    --color-black: #272727;
+    --color-grey: #eee;
+    --color-orange: #ffb700;
+    .s-header__login-image {
+      filter: invert(1);
+    }
+  }
+}
+/* stylelint-enable */

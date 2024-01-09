@@ -1,0 +1,14 @@
+/* stylelint-disable no-descending-specificity */
+
+.s-footer {
+
+  padding: var(--a-padding-x4) 0;
+  color: var(--color-white);
+  background: var(--color-black);
+
+  &__block {
+    display: flex;
+    align-items: flex-start;
+  }
+}
+/* stylelint-enable no-descending-specificity */
