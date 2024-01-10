@@ -3,7 +3,7 @@
     <s-loader />
     <s-header @handler-change-themes="changeColorThemes" />
     <NuxtPage />
-    <s-footer />
+    <s-footer @handler-change-themes="changeColorThemes" />
   </div>
 </template>
 

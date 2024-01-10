@@ -1,6 +1,6 @@
 <template>
   <section class="s-auth">
-    <div class="s-auth__container">
+    <div class="s-auth__container l-wide">
       <h1 class="s-auth__title">{{ formName ? 'Войти' : 'Регистрация' }}</h1>
       <div class="s-auth__formbox">
         <form class="s-auth__form" @submit.prevent="sendForm">
@@ -23,7 +23,7 @@
             {{ formName ? 'Регистрация' : 'Войти' }}
           </button>
           <span class="s-auth__help">
-            <span class="s-auth__help-bold">логин: </span>test@mail.ru <br />
+            <span class="s-auth__help-bold">логин: </span>test@mail.ru<br />
             <span class="s-auth__help-bold">пароль: </span>123456
           </span>
         </div>
@@ -96,12 +96,10 @@ const sendRegForm = async () => {
     userInformation.value = cookieDataUser;
     router.push({ path: '/lk' });
   } catch (error) {
-    console.log(error.message);
     validFlag.value = true;
     fbError.value = true;
     if (error.message === 'Firebase: Error (auth/email-already-in-use).') {
       fbErrorText.value = 'Почта уже зарегистрирована.';
-      console.log('Неправильный логин/пароль.');
     } else {
       console.error(`Ошибка: ${error.message}`);
     }
@@ -126,10 +124,8 @@ const sendLoginForm = async () => {
     fbError.value = true;
     if (error.message === 'Firebase: Error (auth/email-already-in-use).') {
       fbErrorText.value = 'Почта уже зарегистрирована.';
-      console.log('Неправильный логин/пароль.');
     } else if (error.message === 'Firebase: Error (auth/invalid-login-credentials).') {
       fbErrorText.value = 'Пользователь не найден';
-      console.log('Неправильный логин/пароль.');
     } else {
       console.error(`Ошибка: ${error.message}`);
     }

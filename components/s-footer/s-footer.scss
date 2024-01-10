@@ -8,7 +8,30 @@
 
   &__block {
     display: flex;
-    align-items: flex-start;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__theme{
+    width: torem(25);
+    height: torem(25);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    background: transparent;
+    &:hover{
+      svg{
+        transform: rotate(90deg);
+      }
+    }
+    svg{
+      transition: .3s;
+      path{
+        fill:var(--color-orange);
+      }
+    }
   }
 }
 /* stylelint-enable no-descending-specificity */

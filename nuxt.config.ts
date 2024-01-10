@@ -29,7 +29,7 @@ export default defineNuxtConfig({
   modules: ['nuxt-swiper', '@pinia/nuxt', '@nuxt/image-edge'],
   app: {
     head: {
-      title: 'Rating',
+      title: 'Fairplay',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },

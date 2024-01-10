@@ -1,11 +1,35 @@
-<!-- eslint-disable vue/no-parsing-error -->
+<!-- eslint-disable prettier/prettier -->
 <template>
   <header class="s-header">
     <div class="s-header__container l-wide">
-      <nuxt-link to="/" class="s-header__logo">
-        <span>Глебов <br />Евгений</span>
-      </nuxt-link>
-      <div class="s-header__logic">
+      <button class="s-header__logo" @click="linkNavigateToMain">
+        <img src="/images/header/tiger.png" class="s-header__logo-img" alt="logo" />
+      </button>
+
+      <div :class="['s-header__logic', { 'active': isOpen }]">
+        <nav class="s-header__nav">
+          <button class="s-header__nav-link" @click="linkNavigateToMain">Главная</button>
+          <button class="s-header__nav-link" @click="linkNavigateToAuth">Это ссылка</button>
+          <button class="s-header__nav-link" @click="linkNavigateToAuth">И это ссылка</button>
+          <div class="s-header__nav-buttons">
+            <button v-if="!currentUser.uid" class="s-header__nav-login" @click="linkNavigateToAuth">Войти</button>
+            <div v-else>
+              <button class="s-header__nav-login _lk" @click="linkNavigateToLK">Личный кабинет</button>
+              <button class="s-header__nav-login" @click="loginClean">Выйти</button>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <div class="s-header__control">
+        <button v-if="!currentUser.uid" class="s-header__nav-login" @click="linkNavigateToAuth">Войти</button>
+        <div v-else class="s-header__nav-login-box">
+          <button class="s-header__nav-login _lk" @click="linkNavigateToLK">ЛК</button>
+          <button class="s-header__nav-login" @click="loginClean">Выйти</button>
+        </div>
+      </div>
+
+      <div class="s-header__aside">
         <button class="s-header__theme" type="button" @click="changeThemes">
           <svg
             width="24"
@@ -27,15 +51,19 @@
             </defs>
           </svg>
         </button>
-        <nuxt-link to="/lk" :class="['s-header__link', { 's-header__link-active': currentUser.uid }]">
-          <img class="s-header__login-image" src="/images/icons/lk.png" />
-        </nuxt-link>
-        <button v-if="!currentUser.uid" class="s-header__login" @click="checkLogin">
-          <img class="s-header__login-image" src="/images/icons/login.png" />
-        </button>
-        <button v-else class="s-header__login" @click="loginClean">
-          <img class="s-header__login-image" src="/images/icons/logout.png" />
-        </button>
+        <div class="s-header__menu" @click="toggleHam">
+          <svg :class="['ham hamRotate hamR', { 'active': isOpen }]" viewBox="0 0 100 100" width="35">
+            <path
+              class="line top"
+              d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20"
+            />
+            <path class="line middle" d="m 70,50 h -40" />
+            <path
+              class="line bottom"
+              d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20"
+            />
+          </svg>
+        </div>
       </div>
     </div>
   </header>
@@ -49,15 +77,27 @@ const emit = defineEmits(['handler-change-themes']);
 const router = useRouter();
 const userInformation = useCookie('userInformation');
 const userCorrect = ref(false);
+const isOpen = ref(false);
 
-const checkLogin = () => {
+const changeThemes = () => {
+  emit('handler-change-themes');
+};
+
+const linkNavigateToAuth = () => {
+  isOpen.value = false;
   if (!userInformation.value) {
     router.push({ path: '/authorization' });
   }
 };
 
-const changeThemes = () => {
-  emit('handler-change-themes');
+const linkNavigateToLK = () => {
+  isOpen.value = false;
+  router.push({ path: '/lk' });
+};
+
+const linkNavigateToMain = () => {
+  isOpen.value = false;
+  router.push({ path: '/' });
 };
 
 const loginClean = () => {
@@ -66,6 +106,7 @@ const loginClean = () => {
   userInformation.value = null;
   router.push({ path: '/' });
   userCorrect.value = false;
+  isOpen.value = false;
 };
 
 const getInformationFromCookie = async () => {
@@ -75,8 +116,25 @@ const getInformationFromCookie = async () => {
   }
 };
 
+const toggleHam = () => {
+  isOpen.value = !isOpen.value;
+};
+
+const getWidth = () => {
+  const currentWidth = window.innerWidth;
+  if (currentWidth > 767) {
+    isOpen.value = false;
+  }
+};
+
 onMounted(() => {
   getInformationFromCookie();
+  getWidth();
+  window.addEventListener('resize', (e) => {
+    if (e.currentTarget.innerWidth > 767) {
+      isOpen.value = false;
+    }
+  });
 });
 </script>
 
