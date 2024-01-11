@@ -101,7 +101,7 @@ const sendRegForm = async () => {
     if (error.message === 'Firebase: Error (auth/email-already-in-use).') {
       fbErrorText.value = 'Почта уже зарегистрирована.';
     } else {
-      console.error(`Ошибка: ${error.message}`);
+      // console.error(`Ошибка: ${error.message}`);
     }
   }
 };
@@ -119,7 +119,6 @@ const sendLoginForm = async () => {
     userInformation.value = cookieDataUser;
     router.push({ path: '/lk' });
   } catch (error) {
-    console.log(error.message);
     validFlag.value = true;
     fbError.value = true;
     if (error.message === 'Firebase: Error (auth/email-already-in-use).') {
@@ -127,7 +126,7 @@ const sendLoginForm = async () => {
     } else if (error.message === 'Firebase: Error (auth/invalid-login-credentials).') {
       fbErrorText.value = 'Пользователь не найден';
     } else {
-      console.error(`Ошибка: ${error.message}`);
+      // console.error(`Ошибка: ${error.message}`);
     }
   }
 };

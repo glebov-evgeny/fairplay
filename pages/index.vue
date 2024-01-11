@@ -1,5 +1,5 @@
 <template>
   <main class="s-main">
-    <s-rating />
+    <s-intro />
   </main>
 </template>

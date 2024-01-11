@@ -11,6 +11,7 @@
     justify-content: space-between;
   }
   &__logo{
+    cursor: pointer;
     border: none;
     outline: none;
     background: transparent;
@@ -53,6 +54,7 @@
       padding: 0;
     }
     &-link{
+      cursor: pointer;
       border: none;
       outline: none;
       background: transparent;

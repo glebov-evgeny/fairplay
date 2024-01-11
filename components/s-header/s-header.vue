@@ -87,6 +87,8 @@ const linkNavigateToAuth = () => {
   isOpen.value = false;
   if (!userInformation.value) {
     router.push({ path: '/authorization' });
+  } else {
+    router.push({ path: '/lk' });
   }
 };
 
