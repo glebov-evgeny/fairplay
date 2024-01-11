@@ -2,6 +2,7 @@
   background: var(--color-main);
   color: var(--color-second);
   padding: torem(60) 0;
+  transition: .3s;
   @include _1440 {
     padding: torem(120) 0;
   }
@@ -55,30 +56,11 @@
       padding: 0 torem(50) 0 0;
       margin: 0;
     }
-    &-title{
-      margin-bottom: torem(16);
-    }
-    &-description:not(:last-child){
-      margin-bottom: torem(12);
-    }
   }
   &__title{
     color: var(--color-main);
-    margin-bottom: torem(16);
   }
   &__description{
     color: var(--color-main);
-    margin-bottom: torem(12)
   }
-  // & .title {
-  //   font-size: rem(18);
-  //   line-height: 135%;
-  //   font-weight: 600;
-  //   text-align: center;
-  //   color: var(--color-second);
-  //   margin-bottom: rem(15);
-  //   @include _768 {
-  //     font-size: rem(24);
-  //   }
-  // }
 }
