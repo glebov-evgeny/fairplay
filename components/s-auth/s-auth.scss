@@ -4,6 +4,9 @@
   width: 100%;
   color: var(--color-second);
   padding: torem(60) 0;
+    @include _1440 {
+    padding: torem(120) 0;
+  }
   &__title{
     font-size: torem(24);
     line-height: 135%;
