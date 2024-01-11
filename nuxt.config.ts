@@ -59,6 +59,7 @@ export default defineNuxtConfig({
       FB_STORAGE_BUCKET: process.env.FB_STORAGE_BUCKET,
       FB_MESSAGING_SENDER_ID: process.env.FB_MESSAGING_SENDER_ID,
       FB_APP_ID: process.env.FB_APP_ID,
+      ADMIN_ID: process.env.ADMIN_ID,
     },
   },
 });

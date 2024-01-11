@@ -5,7 +5,6 @@
       <button class="s-header__logo" @click="linkNavigateToMain">
         <img src="/images/header/tiger.png" class="s-header__logo-img" alt="logo" />
       </button>
-
       <div :class="['s-header__logic', { 'active': isOpen }]">
         <nav class="s-header__nav">
           <button class="s-header__nav-link" @click="linkNavigateToMain">Главная</button>
@@ -14,7 +13,17 @@
           <div class="s-header__nav-buttons">
             <button v-if="!currentUser.uid" class="s-header__nav-login" @click="linkNavigateToAuth">Войти</button>
             <div v-else>
-              <button class="s-header__nav-login _lk" @click="linkNavigateToLK">Личный кабинет</button>
+              <div class="s-header__nav-box">
+                <button
+                  v-if="currentUser.uid === config.ADMIN_ID"
+                  class="s-header__nav-login _lk"
+                  @click="linkNavigateToAdmin">
+                  Великий Админ
+                </button>
+                <button v-else class="s-header__nav-login _lk" @click="linkNavigateToLK">
+                  Личный кабинет
+                </button>
+              </div>
               <button class="s-header__nav-login" @click="loginClean">Выйти</button>
             </div>
           </div>
@@ -24,7 +33,13 @@
       <div class="s-header__control">
         <button v-if="!currentUser.uid" class="s-header__nav-login" @click="linkNavigateToAuth">Войти</button>
         <div v-else class="s-header__nav-login-box">
-          <button class="s-header__nav-login _lk" @click="linkNavigateToLK">ЛК</button>
+          <div class="s-header__nav-box">
+            <button
+              v-if="currentUser.uid === config.ADMIN_ID"
+              class="s-header__nav-login _lk"
+              @click="linkNavigateToAdmin">АД</button>
+            <button v-else class="s-header__nav-login _lk" @click="linkNavigateToLK">ЛК</button>
+          </div>
           <button class="s-header__nav-login" @click="loginClean">Выйти</button>
         </div>
       </div>
@@ -70,6 +85,7 @@
 </template>
 
 <script setup>
+const config = useRuntimeConfig();
 import { useUserStore } from '~/store/user';
 const currentUser = useUserStore();
 
@@ -88,13 +104,26 @@ const linkNavigateToAuth = () => {
   if (!userInformation.value) {
     router.push({ path: '/authorization' });
   } else {
-    router.push({ path: '/lk' });
+    if (currentUser.uid === config.ADMIN_ID) {
+      router.push({ path: '/admin' });
+    } else {
+      router.push({ path: '/lk' });
+    }
   }
 };
 
 const linkNavigateToLK = () => {
   isOpen.value = false;
-  router.push({ path: '/lk' });
+  if (currentUser.uid === config.ADMIN_ID) {
+    router.push({ path: '/admin' });
+  } else {
+    router.push({ path: '/lk' });
+  }
+};
+
+const linkNavigateToAdmin = () => {
+  isOpen.value = false;
+  router.push({ path: '/admin' });
 };
 
 const linkNavigateToMain = () => {

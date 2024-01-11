@@ -2,6 +2,7 @@
 <template>
   <section class="s-lk">
     <div class="s-lk__container l-wide">
+      <p class="s-lk__title s-title">{{ config.ADMIN_ID }}</p>
       <h1 class="s-lk__title s-title">Личный кабинет</h1>
       <div class="s-lk__box">
         <div class="s-lk__user-wrapper">
@@ -14,10 +15,10 @@
                 </p>
               </div>
             </div>
-            <!-- <div class="s-lk__user-item">
-              <p class="s-lk__user-item-label">id:</p>
+            <div class="s-lk__user-item">
+              <p class="s-lk__user-item-label"><b>id:</b></p>
               <p class="s-lk__user-item-label _bold">{{ currentUser.uid }}</p>
-            </div> -->
+            </div>
             <div class="s-lk__user-item">
               <p class="s-lk__user-item-label"><b>Любимый цвет:</b></p>
               <div class="s-lk__user-item-wrapper">
@@ -32,6 +33,7 @@
   </section>
 </template>
 <script setup>
+const config = useRuntimeConfig();
 import { useUserStore } from '~/store/user';
 const currentUser = useUserStore();
 const userColor = ref('#FFFFFF');

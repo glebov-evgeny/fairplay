@@ -1,6 +1,6 @@
 <template>
   <main class="s-main">
-    <s-admin />
+    <s-lk />
   </main>
 </template>
 
