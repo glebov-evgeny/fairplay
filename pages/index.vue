@@ -1,6 +1,7 @@
 <template>
   <main class="s-main">
     <s-intro />
+    <s-moc />
     <s-popup-cookie
       v-if="popupCookieIsShow"
       @close-popup="closePopupCookie"

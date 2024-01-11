@@ -1,15 +1,15 @@
-.s-intro {
+.s-moc {
   background: var(--color-main);
   color: var(--color-second);
-  padding: torem(60) 0 0;
+  padding: torem(60) 0;
   @include _1440 {
-    padding: torem(120) 0 0;
+    padding: torem(120) 0;
   }
   &__container{
     transition: .3s;
     @include _1440 {
       display: flex;
-      flex-direction: row-reverse;
+      flex-direction: row;
     }
   }
   &__main {
@@ -17,7 +17,7 @@
     background: var(--color-second);
     color: var(--color-main);
     padding: var(--a-padding-x4);
-    border-radius: var(--border-radius-x3) 0  var(--border-radius-x3) 0;
+    border-radius: 0 var(--border-radius-x3) 0  var(--border-radius-x3) ;
     @include _768 {
       padding: var(--a-padding-x8);
     }
@@ -30,7 +30,7 @@
       height: torem(20);
       background: var(--color-second);
       position: absolute;
-      right: 0;
+      left: 0;
       top: torem(-15);
       border-radius: var(--border-radius-x3) var(--border-radius-x3) 0 0;
     }
@@ -40,7 +40,7 @@
       height: torem(20);
       background: var(--color-second);
       position: absolute;
-      left: 0;
+      right: 0;
       bottom: torem(-15);
       border-radius: 0 0 var(--border-radius-x3) var(--border-radius-x3);
     }
@@ -53,7 +53,7 @@
     }
     @include _1440 {
       width: 50%;
-      padding: var(--a-padding-x8) var(--a-padding-x20) var(--a-padding-x8) var(--a-padding-x8);
+      padding: var(--a-padding-x8) var(--a-padding-x8) var(--a-padding-x8) var(--a-padding-x20);
       margin: 0;
     }
   }
