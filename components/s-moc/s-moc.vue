@@ -19,11 +19,16 @@
         </p>
       </div>
       <div class="s-moc__aside">
-        <h2 class="s-moc__aside-title s-title">И конечно стих:</h2>
-        <p class="s-moc__aside-description s-description">а где тут руль спросил гагарин</p>
-        <p class="s-moc__aside-description s-description">деревня буркнул королев</p>
-        <p class="s-moc__aside-description s-description">еще спроси а где тут вожжи</p>
-        <p class="s-moc__aside-description s-description">еще поехали скажи</p>
+        <div class="s-moc__aside-content">
+          <h2 class="s-moc__aside-title s-title">И конечно стих:</h2>
+          <p class="s-moc__aside-description s-description">а где тут руль спросил гагарин</p>
+          <p class="s-moc__aside-description s-description">деревня буркнул королев</p>
+          <p class="s-moc__aside-description s-description">еще спроси а где тут вожжи</p>
+          <p class="s-moc__aside-description s-description">еще поехали скажи</p>
+        </div>
+        <div class="s-moc__aside-decoration">
+          <img src="../../assets/images/moc/gagarin.png" alt="gagarin" />
+        </div>
       </div>
     </div>
   </section>
