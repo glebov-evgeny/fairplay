@@ -1,7 +1,6 @@
 <template>
   <main class="s-main">
-    <s-lk />
-    <s-loader-fast />
+    <s-cats />
   </main>
 </template>
 
