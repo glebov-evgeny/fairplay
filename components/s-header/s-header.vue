@@ -9,7 +9,6 @@
         <nav class="s-header__nav">
           <button class="s-header__nav-link" @click="linkNavigateToMain">Главная</button>
           <nuxt-link class="s-header__nav-link" to="/cats">Котики</nuxt-link>
-          <button class="s-header__nav-link" @click="linkNavigateToAuth">И это ссылка</button>
           <div class="s-header__nav-buttons">
             <button v-if="!currentUser.uid" class="s-header__nav-login" @click="linkNavigateToAuth">Войти</button>
             <div v-else>
